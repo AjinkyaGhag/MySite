@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .carousel-indicators {
+            visibility: hidden;
+        }
+    </style>
+ 
+</head>
+<body ng-controller="SampleCtrl">
+
+  
+    <!--Email: <input type="text" ng-model="email">
+    Password: <input type="text" ng-model="password">
+    <br><br>
+    <button ng-click="signIN()">Sign in</button>
+    <br><br>
+
+    <button ng-click="createUser()">Create User</button>
+
+    <br><br>
+
+    <button ng-click="deleteUser()">Delete User</button>
+    <button ng-click="SignOutUSer()">Sign Out</button>
+    <button ng-click="sendPassReset()">send pass reset email</button>
+    <button ng-click="updateProfileUser()">update Profile User</button>
+    
+   
+    <p ng-if="message">Message: <strong>{{ message }}</strong></p>
+    <p ng-if="error">Error: <strong>{{ error }}</strong></p>
+    <span ng-show="firebaseUser">
+        {{ firebaseUser.displayName }} |{{ firebaseUser.photoURL }} | {{ firebaseUser.emailVerified }} |  <a href="#" ng-click="SignOutUSer()">Sign out</a>
+    </span>-->
+ 
+        <div class="jumbotron">
+            <br>
+            <div ng-controller="CarouselDemoCtrl">
+                <div>
+                    <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+                        <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+                            <!--<img ng-src="{{slide.image}}" style="margin:auto;">-->
+                            <!--<div class="carousel-caption">-->
+                            <div>
+                                <!--<h4>Slide {{slide.id}}</h4>-->
+                                <h1><center>{{slide.text}}</center></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="row">
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-info" ng-click="addSlide()">Add Slide</button>
+                        <button type="button" class="btn btn-info" ng-click="randomize()">Randomize slides</button>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" ng-model="noWrapSlides">
+                                Disable Slide Looping
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        Interval, in milliseconds: <input type="number" class="form-control" ng-model="myInterval">
+                        <br />Enter a negative number or 0 to stop the interval.
+                    </div>
+                </div>-->
+            </div>
+            <!--<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+
+
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <h1><center>SharePoint 2013 Developer</center></h1>
+                    </div>
+
+                    <div class="item">
+                        <h1><center>I'm available for work / business</center></h1>
+                    </div>
+
+                    <div class="item">
+                        <h1><center>Microsoft Azure</center></h1>
+                    </div>
+
+                    <div class="item">
+                        <h1><center>Cloud / Android Services</center></h1>
+                    </div>
+                </div>-->
+            <!-- Left and right controls -->
+            <!--<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>-->
+        </div>
+
+
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-sm-3 well">
+                    <div class="well">
+                        <p><a href="#/AboutMe">My Profile</a></p>
+
+                        <img src="../Images/AJ.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+                    </div>
+                    <div class="well">
+                        <p>Interests</p>
+                        <p>
+                            <span class="label label-default">AngularJS</span>
+                            <span class="label label-primary">SharePoint 2013</span>
+                            <span class="label label-success">Microsoft Azure</span>
+                            <span class="label label-info">Food Business</span>
+                            <span class="label label-warning">Computer Training</span>
+                            <span class="label label-danger">Investors</span>
+                            <span class="label label-danger">Staff</span>
+                            <span class="label label-danger">Chef/Cook</span>
+                        </p>
+                    </div>
+                    <div class="alert alert-success fade in">
+                        <!--<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>-->
+                        <p><strong>Now Hiring!</strong></p>
+                        Contact us for more details:
+                        Investors/Staff/Partner/Chef/Cook
+                        <!--<div onrender="rendered()" class="fb-messengermessageus" messenger_app_id="386469651480295" page_id="19292868552" color="white" size="large"></div>-->
+                    </div>
+
+                    <p><a href="#/FoodTruckMumbai">Food Truck Mumbai</a></p>
+                    <p><a href="#/FreeComputerClass">Free Computer Class/Training Help</a></p>
+                    <p><a href="#/AboutMe">About Me</a></p>
+                    <p>Partners</p>
+                </div>
+                <div class="col-sm-7">
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="panel panel-default text-left">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li ng-repeat="message in messages">{{ message.$value }}</li>
+                                    </ul>
+                                  
+                                    <div onrender="rendered()" class="fb-follow" data-href="https://www.facebook.com/ajinkya.ghag.31" data-colorscheme="light" data-layout="standard" data-show-faces="true"></div>
+
+
+                                    <!--<button type="button" class="btn btn-default btn-sm">
+                                        <span class="glyphicon glyphicon-thumbs-up"></span> Like
+                                    </button>-->
+                                    <p>Download my app from google store</p>
+                                    <a href="https://play.google.com/store/apps/details?id=com.firstapp.telerik.json_reader_2"><img src="../Images/google play.png" class="img-responsive" alt="Cinque Terre" width="150" height="60"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-sm-12">
+                            <div class="well">
+                                <p><img src="../Images/SharePointIcon.ico" class="img-circle" style="float:left" height="55" width="55" alt="Avatar"><strong>SharePoint 2013</strong></p>
+                                <p>
+                                    Free Sharepoint 2013 training/help- Programming language. Online Computer training/help on programming language such as java script, angular JS, SharePoint,
+                                    Depending on my schedule
+                                </p>
+                                <div  class="fb-like" data-href="https://www.facebook.com/Its-Mee-239698022773586/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-sm-12">
+                            <div class="well">
+                                <p><img src="../Images/AnularJSIcon.png" class="img-circle" style="float:left" height="55" width="55" alt="Avatar"><strong>Angular JS</strong></p>
+                                <p>Online Computer training/help on Angular JS training/help - Online.</p>
+                                <div  class="fb-like" data-href="https://www.facebook.com/Its-Mee-239698022773586/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-sm-12">
+                            <div class="well">
+                                <p><img src="../Images/FoodTruck 2.jpg" class="img-circle" style="float:left" height="55" width="55" alt="Avatar"><strong>Food Truck Mumbai - New Business</strong></p>
+                                <p>I want to start a food truck business in Mumbai. Need investors, staff and Chef/Cook</p>
+                                <div  class="fb-like" data-href="https://www.facebook.com/Its-Mee-239698022773586/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-2 well">
+                    <div class="thumbnail">
+                        <p>Upcoming Projects:</p>
+                        <img src="../Images/Angular.jpg" alt="Free Computer Class" width="400" height="300">
+                        <p><strong>Free Computer Programing language training/help - Online</strong></p>
+                        <p>Fri. 27 December 2020</p>
+                        <a href="#/FreeComputerClass"><button class="btn btn-primary">Info</button></a>
+                    </div>
+
+                </div>
+                <div class="col-sm-2 well">
+                    <div class="thumbnail">
+                        <p>Upcoming Projects:</p>
+                        <img src="../Images/FoodTruck.jpg" alt="Food Truck Mumbai" width="400" height="300">
+                        <p><strong>Food Truck Mumbai - New Business</strong></p>
+                        <p>Fri. 27 December 2020</p>
+                        <a href="#/FoodTruckMumbai"><button class="btn btn-primary">Info</button></a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <footer>
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-linkedin"></a>
+            <a href="#" class="fa fa-youtube"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <p>Copyright © Ajinkya Ghag. All rights reserved.<br />Version - 1</p>
+        </footer>
+
+    </body>
+</html>
